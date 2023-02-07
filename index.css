@@ -1,0 +1,122 @@
+body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.calendar {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(180, 116, 116, 1) 0%, rgba(58, 71, 80, 1) 65%);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wrapper {
+    width: 350px;
+    background: #6d6b76;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    background: #86858d;
+    color: white;
+    font-weight: 200;
+    padding: 5px 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.header span {
+    background-color: #6d6b762f;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header span:hover {
+    background-color: #51c5f6;
+    color: black;
+}
+
+.header p {
+    cursor: default;
+}
+
+.weeks {
+    width: 90%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.week-days {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-inline-start: 0;
+    background: linear-gradient(to right, #81f7cc, #4fc2f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.week-days li {
+    width: calc( 100% / 7 );
+    font-weight: bolder;
+    font-size: 0.8rem;
+    cursor: default;
+    color: transparent;
+}
+
+.week-dates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-inline-start: 0;
+}
+
+.week-dates li {
+    width: calc(100% / 7);
+    font-size: 0.8rem;
+    line-height: 45px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.week-dates li.active:hover {
+    color: black;
+}
+
+.week-dates li.active::before {
+    position: absolute;
+    background: #86858d4b;
+    content: "";
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.week-dates li.active:hover::before,
+.week-dates li.active.isToday::before {
+    background: #51c5f6;
+}
+
+li.inactive {
+    color: #86858d;
+}
